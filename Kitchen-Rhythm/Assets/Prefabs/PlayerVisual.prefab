@@ -298,8 +298,8 @@ Transform:
   m_GameObject: {fileID: 1657794137200039535}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002000005, y: 0.1430005, z: 0.01300001}
-  m_LocalScale: {x: 0.16380073, y: 0.23333384, z: 0.18112135}
+  m_LocalPosition: {x: -0.0020000048, y: 0.1430005, z: 0.01300001}
+  m_LocalScale: {x: 0.16380073, y: 0.23333383, z: 0.18112135}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2594200177850212103}
@@ -525,6 +525,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3177877284553027100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449199043538678956}
+  m_Layer: 0
+  m_Name: KitchenObjectHoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &449199043538678956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177877284553027100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.212, z: 0.211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6417197787432709630}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3204271005914148410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,8 +1335,8 @@ Transform:
   m_GameObject: {fileID: 6676385036301731529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024238473, y: 0.5846063, z: 0.027999595}
-  m_LocalScale: {x: 4.3764186, y: 4.376419, z: 4.3764186}
+  m_LocalPosition: {x: -0.024238473, y: 0.5846063, z: 0.027999585}
+  m_LocalScale: {x: 4.376419, y: 4.376419, z: 4.376419}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8471962370715701979}
@@ -1533,12 +1564,12 @@ Transform:
   m_GameObject: {fileID: 7321078461047609641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002000002, y: 0.315, z: 0.01}
-  m_LocalScale: {x: 0.27875003, y: 0.27875, z: 0.27875003}
+  m_LocalPosition: {x: -0.002000002, y: 0.315, z: 0.009999999}
+  m_LocalScale: {x: 0.27875, y: 0.27875, z: 0.27875}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 756863820045880990}
   - {fileID: 6815328542953071585}
+  - {fileID: 756863820045880990}
   m_Father: {fileID: 6417197787432709630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4514663063483797670
@@ -1834,8 +1865,9 @@ Transform:
   m_LocalScale: {x: 1.3704102, y: 1.3704102, z: 1.3704102}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5337962426100412538}
   - {fileID: 1589873326256534514}
+  - {fileID: 5337962426100412538}
+  - {fileID: 449199043538678956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8010569841463570893
@@ -1911,6 +1943,7 @@ MonoBehaviour:
   countersLayer:
     serializedVersion: 2
     m_Bits: 8
+  kitchenObjectHoldPoint: {fileID: 0}
 --- !u!54 &369976790222275017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1963,8 +1996,8 @@ Transform:
   m_GameObject: {fileID: 8982200282199289892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.032110613, y: -0.1174699, z: 0.31855282}
-  m_LocalScale: {x: 2.4818015, y: 2.4818015, z: 2.4818015}
+  m_LocalPosition: {x: 0.032110613, y: -0.1174699, z: 0.3185528}
+  m_LocalScale: {x: 2.4818017, y: 2.4818017, z: 2.4818017}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3289456218751000188}

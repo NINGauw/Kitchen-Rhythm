@@ -8,20 +8,22 @@ using UnityEngine.EventSystems;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.UIElements;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     public static Player Instance{get ; private set;} 
     public event EventHandler<OnSelectedCounterChangedEventArgs>OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs: EventArgs{
-        public Counter selectedCounter;
+        public BaseCounter selectedCounter;
     }
     [SerializeField]private GameInput gameInput;
     [SerializeField]private float movingSpeed = 2f;
     [SerializeField]private float rotateSpeed = 10f;
     [SerializeField]private LayerMask countersLayer;
+    [SerializeField] private Transform kitchenObjectHoldPoint;
+    private KitchenObject kitchenObject;
     private bool isWalking;
     private Vector3 lastInteraction;
-    private Counter selectedCounter;
+    private BaseCounter selectedCounter;
     private void Update()
     {
         HandleMovement();
@@ -35,12 +37,20 @@ public class Player : MonoBehaviour
     }
     private void Start(){
         gameInput.OnInteractAction += GameInput_OnInteractAction;
+        gameInput.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
+    }
+
+    private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
+    {
+        if(selectedCounter != null){
+            selectedCounter.InteractAlternate(this);
+        }
     }
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
         if(selectedCounter != null){
-            selectedCounter.Interact();
+            selectedCounter.Interact(this);
         }
     }
     private void HandleInteraction(){
@@ -52,10 +62,10 @@ public class Player : MonoBehaviour
         float interactDistance = 4f;
         //Thu thập thêm thông tin của vật va chạm
         if(Physics.Raycast(transform.position, lastInteraction, out RaycastHit raycastHit, interactDistance, countersLayer)){
-            if(raycastHit.transform.TryGetComponent(out Counter counter)){
-                if(counter != selectedCounter)
+            if(raycastHit.transform.TryGetComponent(out BaseCounter baseCounter)){
+                if(baseCounter != selectedCounter)
                 {
-                    SetSelectedCounter(counter);
+                    SetSelectedCounter(baseCounter);
                 }
 
             } else{
@@ -78,12 +88,30 @@ public class Player : MonoBehaviour
     public bool IsWalking(){
         return isWalking;
     }
-    private void SetSelectedCounter(Counter counter)
+    private void SetSelectedCounter(BaseCounter counter)
     {
         selectedCounter = counter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
         {
             selectedCounter = selectedCounter,
         });
+    }
+    
+    public KitchenObject GetKitchenObject(){
+        return kitchenObject;
+    }
+    public void SetKitchenObject(KitchenObject kitchenObject){
+        this.kitchenObject = kitchenObject;
+    }
+    public void ClearKitchenObject(){
+        kitchenObject = null;
+    }
+    public bool HasKitchenObject(){
+        return kitchenObject != null;
+    }
+
+    public Transform GetKitchenObjectFollowParent()
+    {
+        return kitchenObjectHoldPoint;
     }
 }
