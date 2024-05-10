@@ -59,7 +59,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if(moveDir != Vector3.zero){
             lastInteraction = moveDir;
         }
-        float interactDistance = 4f;
+        float interactDistance = 2f;
         //Thu thập thêm thông tin của vật va chạm
         if(Physics.Raycast(transform.position, lastInteraction, out RaycastHit raycastHit, interactDistance, countersLayer)){
             if(raycastHit.transform.TryGetComponent(out BaseCounter baseCounter)){

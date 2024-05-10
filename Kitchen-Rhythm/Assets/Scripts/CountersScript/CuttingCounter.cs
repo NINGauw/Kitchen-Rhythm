@@ -2,13 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class CuttingCounter : BaseCounter, IKitchenObjectParent
+public class CuttingCounter : BaseCounter, IProgressBar
 {
-    public event EventHandler<OnProgressChangeEventArgs> OnProgressChange;
-    public class OnProgressChangeEventArgs : EventArgs{
-        public float progressNomalized;
-    }
+    public event EventHandler<IProgressBar.OnProgressChangeEventArgs> OnProgressChange;
     [SerializeField]private CuttingRecipeSO[] cuttingRecipesSOArray;
     private float cuttingProgress;
     public override void Interact(Player player){
@@ -30,6 +28,15 @@ public class CuttingCounter : BaseCounter, IKitchenObjectParent
                 //Player not carry somethings
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
+            else{
+                //Player hold somethings
+                if(player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)){
+                    //Player hold a plate
+                    if(plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())){
+                        GetKitchenObject().DestroySelf();
+                    }   
+                }
+            }
         }
     }
     public override void InteractAlternate(Player player)
@@ -40,7 +47,7 @@ public class CuttingCounter : BaseCounter, IKitchenObjectParent
                //Ready for cutter
                cuttingProgress++;
                 CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
-                OnProgressChange?.Invoke(this, new OnProgressChangeEventArgs{
+                OnProgressChange?.Invoke(this, new IProgressBar.OnProgressChangeEventArgs{
                     progressNomalized = (float)cuttingProgress / (float)cuttingRecipeSO.cuttingProgressMax
                 });
                 if(cuttingProgress >= cuttingRecipeSO.cuttingProgressMax){

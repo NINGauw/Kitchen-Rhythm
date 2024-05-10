@@ -22,6 +22,25 @@ public class Counter : BaseCounter, IKitchenObjectParent
                 //Player not carry somethings
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
+            else{
+                //Player Carry something
+                if(player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)){
+                    //Player hold a plate
+                    if(plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())){
+                        GetKitchenObject().DestroySelf();
+                    }   
+                }else{
+                    //Player carry something else not plate
+                    if(GetKitchenObject().TryGetPlate(out plateKitchenObject)){
+                        //Counter have a plate
+                        if(plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO())){
+                            //Player hold valid kitchenObject to put on
+                            player.GetKitchenObject().DestroySelf();
+                        };
+
+                    }
+                }
+            }
         }
     }
 }

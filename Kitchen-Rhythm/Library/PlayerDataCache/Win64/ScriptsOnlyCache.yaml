@@ -5,14 +5,24 @@ ScriptsOnlyBuild:
     - Counter
     - CuttingCounter
     - CuttingRecipeSO
+    - DeliveryCounter
     - GameInput
     - KitchenObject
     - KitchenObjectSO
+    - LookAtCamera
+    - PlateCompletedVisual
+    - PlateCounter
+    - PlateCounterVisual
+    - PlateKitchenObject
     - Player
     - PlayerAnimator
+    - ProgressBarUI
     - SelectedCounterVisual
+    - StoveCounter
+    - StoveCounter_Visual
+    - StoveRecipeSO
+    - TrashCounter
     Unity.InputSystem.dll:
-    - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
@@ -68,6 +78,8 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.XRSystemData
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
     Unity.Timeline.Editor.dll:
     - TimelinePreferences
     - UnityEditor.Timeline.SequenceHierarchy
@@ -75,10 +87,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -99,7 +109,17 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
   serializedClasses:
+    Assembly-CSharp:
+    - PlateCompletedVisual/KitchenObjectSO_GameObject
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.BoolParameter
     - UnityEngine.Rendering.ClampedFloatParameter
@@ -224,8 +244,6 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1738}
-    - Class: 114
       Script: {instanceID: 1740}
     - Class: 114
       Script: {instanceID: 1742}
@@ -234,121 +252,153 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1746}
     - Class: 114
-      Script: {instanceID: 1752}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1754}
     - Class: 114
-      Script: {instanceID: 1846}
+      Script: {instanceID: 1822}
     - Class: 114
-      Script: {instanceID: 1918}
+      Script: {instanceID: 1832}
     - Class: 114
-      Script: {instanceID: 2014}
+      Script: {instanceID: 1850}
     - Class: 114
-      Script: {instanceID: 2608}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 2854}
+      Script: {instanceID: 1924}
     - Class: 114
-      Script: {instanceID: 2990}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 3662}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3820}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 4432}
+      Script: {instanceID: 3244}
     - Class: 114
-      Script: {instanceID: 4552}
+      Script: {instanceID: 3518}
     - Class: 114
-      Script: {instanceID: 4686}
+      Script: {instanceID: 3594}
     - Class: 114
-      Script: {instanceID: 4930}
+      Script: {instanceID: 3686}
     - Class: 114
-      Script: {instanceID: 4982}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 5090}
+      Script: {instanceID: 4458}
     - Class: 114
-      Script: {instanceID: 5556}
+      Script: {instanceID: 4580}
     - Class: 114
-      Script: {instanceID: 5728}
+      Script: {instanceID: 4714}
     - Class: 114
-      Script: {instanceID: 5982}
+      Script: {instanceID: 4960}
     - Class: 114
-      Script: {instanceID: 6198}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 6370}
+      Script: {instanceID: 5120}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 5588}
     - Class: 114
-      Script: {instanceID: 7142}
+      Script: {instanceID: 5760}
     - Class: 114
-      Script: {instanceID: 7220}
+      Script: {instanceID: 6014}
     - Class: 114
-      Script: {instanceID: 7288}
+      Script: {instanceID: 6232}
     - Class: 114
-      Script: {instanceID: 7300}
+      Script: {instanceID: 6388}
     - Class: 114
-      Script: {instanceID: 7412}
+      Script: {instanceID: 6408}
     - Class: 114
-      Script: {instanceID: 7434}
+      Script: {instanceID: 6616}
     - Class: 114
-      Script: {instanceID: 7532}
+      Script: {instanceID: 6998}
     - Class: 114
-      Script: {instanceID: 7720}
+      Script: {instanceID: 7190}
     - Class: 114
-      Script: {instanceID: 7830}
+      Script: {instanceID: 7268}
     - Class: 114
-      Script: {instanceID: 7834}
+      Script: {instanceID: 7338}
     - Class: 114
-      Script: {instanceID: 7860}
+      Script: {instanceID: 7350}
     - Class: 114
-      Script: {instanceID: 8092}
+      Script: {instanceID: 7440}
     - Class: 114
-      Script: {instanceID: 8270}
+      Script: {instanceID: 7464}
     - Class: 114
-      Script: {instanceID: 8602}
+      Script: {instanceID: 7486}
     - Class: 114
-      Script: {instanceID: 8682}
+      Script: {instanceID: 7584}
     - Class: 114
-      Script: {instanceID: 8802}
+      Script: {instanceID: 7774}
     - Class: 114
-      Script: {instanceID: 8808}
+      Script: {instanceID: 7884}
     - Class: 114
-      Script: {instanceID: 8986}
+      Script: {instanceID: 7888}
     - Class: 114
-      Script: {instanceID: 9040}
+      Script: {instanceID: 7914}
     - Class: 114
-      Script: {instanceID: 9116}
+      Script: {instanceID: 7944}
     - Class: 114
-      Script: {instanceID: 9236}
+      Script: {instanceID: 8034}
     - Class: 114
-      Script: {instanceID: 9392}
+      Script: {instanceID: 8150}
     - Class: 114
-      Script: {instanceID: 9614}
+      Script: {instanceID: 8328}
     - Class: 114
-      Script: {instanceID: 9796}
+      Script: {instanceID: 8664}
     - Class: 114
-      Script: {instanceID: 9856}
+      Script: {instanceID: 8746}
     - Class: 114
-      Script: {instanceID: 9896}
+      Script: {instanceID: 8870}
     - Class: 114
-      Script: {instanceID: 10354}
+      Script: {instanceID: 8876}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 9056}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 9110}
     - Class: 114
-      Script: {instanceID: 11596}
+      Script: {instanceID: 9186}
     - Class: 114
-      Script: {instanceID: 11780}
+      Script: {instanceID: 9290}
     - Class: 114
-      Script: {instanceID: 34962}
+      Script: {instanceID: 9308}
     - Class: 114
-      Script: {instanceID: 62808}
+      Script: {instanceID: 9378}
     - Class: 114
-      Script: {instanceID: 77630}
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9470}
+    - Class: 114
+      Script: {instanceID: 9692}
+    - Class: 114
+      Script: {instanceID: 9850}
+    - Class: 114
+      Script: {instanceID: 9876}
+    - Class: 114
+      Script: {instanceID: 9936}
+    - Class: 114
+      Script: {instanceID: 9976}
+    - Class: 114
+      Script: {instanceID: 10096}
+    - Class: 114
+      Script: {instanceID: 10104}
+    - Class: 114
+      Script: {instanceID: 10424}
+    - Class: 114
+      Script: {instanceID: 10440}
+    - Class: 114
+      Script: {instanceID: 10894}
+    - Class: 114
+      Script: {instanceID: 11450}
+    - Class: 114
+      Script: {instanceID: 11692}
+    - Class: 114
+      Script: {instanceID: 11876}
+    - Class: 114
+      Script: {instanceID: 11900}
+    - Class: 114
+      Script: {instanceID: 11922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -360,6 +410,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -386,6 +440,12 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: 540882762544409cc4530e60db00e951
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
       Hash: b5007673bbbdb9d12597a1d8201370f5
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -396,12 +456,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Button
-  - hash:
-      serializedVersion: 2
-      Hash: 540882762544409cc4530e60db00e951
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
   - hash:
       serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
@@ -434,6 +488,12 @@ ScriptsOnlyBuild:
     className: PlayerInput
   - hash:
       serializedVersion: 2
+      Hash: d7ba0fb676c5f6afb6e39d98c11d887b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StoveRecipeSO
+  - hash:
+      serializedVersion: 2
       Hash: 061859733e0e535a55d3c891c2875122
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -444,6 +504,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering
     className: FreeCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 55ad16f53d10b6a0f03ceecdbf872dd9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StoveCounter
   - hash:
       serializedVersion: 2
       Hash: 96b8dc07612bc954b7df040f0c0eb5b6
@@ -516,6 +582,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 68ceb5b1cc6cdd2cfbd176e9104fcfdf
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BaseCounter
   - hash:
       serializedVersion: 2
       Hash: 65d7429f900cd0d7d58933027dfdd825
@@ -678,6 +750,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 88f30b8d278697f7826a79f4da11d2ba
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CuttingRecipeSO
   - hash:
       serializedVersion: 2
       Hash: 7e12302f66e3c8ed5bcfea4ce65fccea
@@ -1130,6 +1208,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: b538af9977c643aa15ad1b5fa87b7f32
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ProgressBarUI
+  - hash:
+      serializedVersion: 2
       Hash: 96e7bcfd2d072992dab64ac44058b930
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1286,6 +1370,12 @@ ScriptsOnlyBuild:
     className: GlobalMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 71489d7309b727a2db30fb35b18d499a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlateCounter
+  - hash:
+      serializedVersion: 2
       Hash: 53e329840e6d03aebec76623c3b054db
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1382,6 +1472,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: 42bb9b1326e9b5e57d4d673d7eec5d35
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TrashCounter
+  - hash:
+      serializedVersion: 2
       Hash: 5c2a5af4658ede896d072a8a641d706e
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
@@ -1392,6 +1488,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDeselectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6e090ad9126124f0aaa731bf2ee03725
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ContainerCounter
   - hash:
       serializedVersion: 2
       Hash: f64b150d7a1cfe994f7144ad212d7130
@@ -1550,10 +1652,22 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 11ad2558bb6f9ab2a0aee5e213c9b1d1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlateCompletedVisual
+  - hash:
+      serializedVersion: 2
       Hash: 672716ae97f6ddb615fa5ac3ec9da349
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: b21175cad2c3fa45da8d2655685f8ac6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: StoveCounter_Visual
   - hash:
       serializedVersion: 2
       Hash: ea5e0cb2f62c5bafc3dfb7bcdc9595e1
@@ -1682,6 +1796,18 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: cfbae16269c8c05732baad94c7faf957
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlateCounterVisual
+  - hash:
+      serializedVersion: 2
+      Hash: 29859d55fba1b50d6daa5dfdcbc9e730
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CuttingCounter
+  - hash:
+      serializedVersion: 2
       Hash: d2ecd94550edf1b56aff07b1f4e41c57
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1728,6 +1854,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollRectValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 4a66704b99e06389b58c31d8d2084dc6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlateKitchenObject
   - hash:
       serializedVersion: 2
       Hash: 830c3b545f6e6ee60a4cebab90516f2c
@@ -1898,6 +2030,18 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerFoldout
   - hash:
       serializedVersion: 2
+      Hash: 9ba843e4d6cbca2f48081a4612aa3a5c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LookAtCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 4985f2bc28c0c3146665814d36efb2f4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DeliveryCounter
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1938,30 +2082,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 6e090ad9126124f0aaa731bf2ee03725
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ContainerCounter
-  - hash:
-      serializedVersion: 2
-      Hash: 68ceb5b1cc6cdd2cfbd176e9104fcfdf
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: BaseCounter
-  - hash:
-      serializedVersion: 2
-      Hash: 29859d55fba1b50d6daa5dfdcbc9e730
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CuttingCounter
-  - hash:
-      serializedVersion: 2
-      Hash: fe80ec80f86e46c589641657d35ecb33
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CuttingRecipeSO
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
