@@ -395,6 +395,8 @@
 "Assets/Scripts/ScriptableObject/RecipeSO.cs"
 "Assets/Scripts/ScriptableObject/StoveRecipeSO.cs"
 "Assets/Scripts/UI/ProgressBarUI.cs"
+"Assets/Scripts/UI/RecipeManagerSingleUI.cs"
+"Assets/Scripts/UI/RecipeManagerUI.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/_Assets/PlayerInputAction.cs"
 -langversion:9.0
